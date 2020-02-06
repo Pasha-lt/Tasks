@@ -1,0 +1,12 @@
+# моя почта 9139136@gmail.com
+# Дано натуральное трех значное число. Выведите его последнюю цифру. Найдите число десятков в нем. Найдите сумму его цифр.
+# ------ solution ------
+
+
+def main():
+    a = int(input('Enter a three-digit number'))
+    print(f'Last digit:{a % 10}.\nDozens in number:{a // 10}. \nSum of digits:{a // 100 + a // 10 % 10 + a % 10}.')
+
+
+if __name__ == '__main__':
+    main()
