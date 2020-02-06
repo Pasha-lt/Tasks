@@ -1,0 +1,25 @@
+# моя почта 9139136@gmail.com
+# ПЕРЕВОД БИТ
+# На вход программе поступает натуральное значение бит. Программа переводит это значение в запись типа:
+# «x1 Тбайт х2 Гбайт х3 Мбайт х4 Кбайт х5 байт х6 бит».
+# ------ solution ------
+
+
+def countbit(userbit):
+    tbite = userbit // 8796093022208
+    gbite = userbit % 8796093022208 // 8589934592
+    mbite = userbit % 8796093022208 % 8589934592 // 8388608
+    kbite = userbit % 8796093022208 % 8589934592 % 8388608 // 8192
+    bite = userbit % 8796093022208 % 8589934592 % 8388608 % 8192 // 8
+    bit = userbit % 8796093022208 % 8589934592 % 8388608 % 8192 % 8
+    print(f'Terabyte - {tbite}, Gigabyte - {gbite}, Megabyte - {mbite}, Kilobyte {kbite}, byte -{bite}, bit {bit}')
+    main()
+
+
+def main():
+    userbit = int(input('Input bits'))
+    countbit(userbit)
+
+
+if __name__ == '__main__':
+    main()
