@@ -1,0 +1,14 @@
+# моя почта 9139136@gmail.com
+# n школьников делят k яблок поровну, не деляющийся остаток остается в корзинке.
+# Сколько яблок достанется каждому школьнику и сколько останится в корзине?
+# Программа получает на вход числа n и k - целые, положительные, не превышают 10000.
+# ------ solution ------
+
+
+def main():
+    a, b = map(int, input('put how many schoolboys_ and how many apple _').split())
+    print(f' Each student got {b//a} apples. There are {b%a} apples left in the basket.')
+
+
+if __name__ == '__main__':
+    main()
