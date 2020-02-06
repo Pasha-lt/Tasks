@@ -1,0 +1,17 @@
+# моя почта 9139136@gmail.com
+# Программа вычисляет длину отрезка (т.е. расстояние между двумя точками), заданного двумя значениями x1 и x2.
+# Входные данные   Выходные данные
+# 1)  -2 6.5          8.5
+#     3 -9            12
+# ------ solution ------
+def count(a, b):
+    print(abs(a - b))
+
+
+def main():
+    a, b = map(float, input('Enter two values between which you want to calculate the distance.').split())
+    count(a, b)
+
+
+if __name__ == '__main__':
+    main()
