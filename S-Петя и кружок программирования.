@@ -29,10 +29,10 @@
 
 
 def foo(x):
-    x = x.lower()  # опускаем все буквы в нижний реестр
-    x = x.replace("a", '').replace("o", '').replace("y", '').replace("e", '').replace("u", '').replace("i",'')  # удаляем гласные
-    x = '.'.join(x)  # Ставим между оставшимеся. (остались только гласные).
-    print('.' + x)  # Добавляем вначале точку что бы соответствовало выводу.
+    x = x.lower()  # Lower the letters to lowercase
+    x = x.replace("a", '').replace("o", '').replace("y", '').replace("e", '').replace("u", '').replace("i",'')  # remove vowels
+    x = '.'.join(x)  # put between the remaining point.
+    print('.' + x)  
     main()
 
 def main():
