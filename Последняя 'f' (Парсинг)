@@ -1,0 +1,38 @@
+# моя почта 9139136@gmail.com
+# Дана строка. Найдите в этой строке последнее вхождение буквы f, и выведите индекс этого вхождения.
+# Если буква f в данной строке встречается только один раз, выведите число -1, а если не встречается ни разу,
+# выведите число -2.При решении этой задачи нельзя использовать метод count.
+# Входные данные
+# Вводится строка.
+# Выходные данные
+# Выведите ответ на задачу.
+# Примеры
+# входные данные
+# comfort
+# выходные данные
+# -1
+# входные данные
+# coffee
+# выходные данные
+# 3
+# ------ solution ------
+
+def countf(x):
+    a = x.find('f') # looking for the first element on the left
+    b = x.rfind('f') # looking for the first element on the right
+    if a == b and a!=-1: #do check 'a' equal 'b' and both not equal '-1'(in find '-1' = None that's why we must chek) after then we can return '-1'
+        return -1
+    elif a == -1:   #if there are no elements, we get '-1' but we must return '-2'
+        return -2
+    else:
+        return b #in other cases, return the index of the last letter
+
+
+def main():
+    x = input('Enter string')
+    print(countf(x))
+    main()
+
+
+if __name__ == '__main__':
+    main()
