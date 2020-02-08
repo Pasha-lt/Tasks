@@ -1,0 +1,33 @@
+# моя почта 9139136@gmail.com
+# A. Максимум в таблице
+# Таблица a размера n × n задаётся следующим образом:
+# В первой строке и в первом столбце таблицы стоят единицы, то есть ai, 1 = a1, i = 1 для всех i = 1, 2, ..., n.
+# Каждое из оставшихся чисел в таблице определяется как сумма числа над ним и числа слева от него. Иными словами,
+# остальные элементы таблицы задаются формулой ai, j = ai - 1, j + ai, j - 1.
+# Эти условия однозначно задают все элементы таблицы.
+# Вам даётся число n. Требуется определить значение максимального числа в таблице n × n, построенной по вышеприведенным правилам.
+# Входные данные
+# В единственной строке входных данных задано натуральное число n (1 ≤ n ≤ 10) — количество строк и столбцов таблицы.
+# Выходные данные
+# Выведите таблицу.
+# ------ solution ------
+
+
+def main():
+    n = int(input('size'))
+    listb = [] # Create list
+    for i in range(n+1):
+        listb.append([1] + [0]*n) #in the first column we put '1'. other column we put '0'.
+
+    for i in range(1,n): # first column don't touch.
+        for j in range(1,i): # if we write 'i' we don't calculate above the main diagonal (dont calculate right triangle)
+            listb[i][j]=listb[i-1][j]+listb[i-1][j-1] #In the index we write the sum of indexes above.
+
+    for i in range(n):
+        for j in range(i): # if we use i+1 we output only needfull numbers without empty elements
+            print(listb[i][j], end=' ')
+        print()
+
+
+if __name__ == '__main__':
+     main()
