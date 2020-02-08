@@ -1,0 +1,36 @@
+# моя почта 9139136@gmail.com
+# Дана строка. Если в этом числе буква f встречается только один раз, выведите её индекс. Если она встречается два и более раз,
+# выведите индекс её первого и последнего появления. Если буква f в данной строке не встречается, ничего не выводите.
+# При решении этой задачи нельзя использовать метод count и циклы.
+# Входные данные
+# Вводится строка.
+# Выходные данные
+# Выведите ответ на задачу.
+# Примеры
+# входные данные
+# comfort
+# выходные данные
+# 3
+# входные данные
+# office
+# выходные данные
+# 1 2
+# ------ solution ------
+
+def countf(x):
+    z = x.find('f')
+    c = x.rfind('f')
+    if z == c and z != -1: # if с = z return z. And put here 'and z != -1' because we may not have 'f'
+        print(z)
+    elif z != c:  # if с != z, return both values (the index of the first and last letter comes out 'f')
+        print(z, c)
+    main()
+
+
+def main():
+    x = input('Enter string')
+    countf(x)
+
+
+if __name__ == '__main__':
+    main()
