@@ -1,0 +1,38 @@
+# моя почта 9139136@gmail.com
+# Дана строка, состоящая ровно из двух слов, разделенных пробелом. Переставьте эти слова местами.
+# Результат запишите в строку и выведите получившуюся строку.
+# При решении этой задачи нельзя пользоваться циклами и инструкцией if.
+# Входные данные
+# Вводится строка.
+# Выходные данные
+# Выведите ответ на задачу.
+# Примеры
+# входные данные
+# Hello, world!
+# выходные данные
+# world! Hello,
+# ------ solution ------
+
+
+def countf(x): #First solution
+    z = x.find(' ') #Search the space index
+    a = x[:z]  #Take a part after space and before space.
+    b = x[z + 1:]
+    print('first solution')
+    print(f'{b}, {a}')  #Print in reverse order.
+
+
+def countf2(x): # second solution
+    a, b = x.split()  #Use split (default separation by space) to assign input to two variables.
+    print('second solution')
+    print(b + ' ' + a)
+
+def main():
+    x = input('Enter string')
+    countf(x)
+    countf2(x)
+    main()
+
+
+if __name__ == '__main__':
+     main()
