@@ -32,7 +32,7 @@ def foo(n):
         print(int(n / 2))  
     else:
         a = n // 2
-        print((n - a) * -1)  
+        print((n - a) * -1)  # The value of the formula by function.
 
 
 if __name__ == '__main__':
