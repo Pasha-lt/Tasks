@@ -1,0 +1,36 @@
+# моя почта 9139136@gmail.com
+# Четырехзначный палиндром
+# (Время: 1 сек. Память: 16 Мб Сложность: 10%)
+# Требуется написать программу, определяющую, является ли четырехзначное натуральное число N палиндромом, т.е. числом,
+# которое одинаково читается слева направо и справа налево.
+# Входные данные
+# Входной файл INPUT.TXT содержит натуральное число N (1000 ≤ N ≤ 9999).
+# Выходные данные
+# В выходной файл OUTPUT.TXT следует вывести слово «YES», если число N является палиндромом, или «NO» – если нет.
+# Примеры:
+#      INPUT.TXT             OUTPUT.TXT
+# 1)     6116                   YES
+# 2)     1231                   NO
+# ------ solution ------
+
+
+def main():
+    with open('INPUT.txt', 'r') as f:
+        s = f.read()
+        number = list(s[:-1])
+        numberrev = number[:]
+        numberrev.reverse()
+        if numberrev == number:
+            writefile = 'YES'
+        else:
+            writefile ='NO'
+        foo(writefile)
+
+
+def foo(writefile):
+    with open('OUTPUT.txt', 'w') as f:
+        f.write(writefile)
+
+
+if __name__ == '__main__':
+     main()
