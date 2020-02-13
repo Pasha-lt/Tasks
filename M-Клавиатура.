@@ -28,7 +28,7 @@
 
 def main():
     storona = input('put "r" or "l"').lower()
-    k = input('Ввод крота')
+    k = input('Enter string')
     foo(storona, k)
     main()
 
