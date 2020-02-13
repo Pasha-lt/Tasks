@@ -1,0 +1,71 @@
+# моя почта 9139136@gmail.com
+# Зарплата
+# В отделе работают 3 сотрудника, которые получают заработную плату в рублях. Требуется определить:
+# на сколько зарплата самого высокооплачиваемого из них отличается от самого низкооплачиваемого.
+# Входные данные
+# В единственной строке входного файла INPUT.TXT записаны размеры зарплат всех сотрудников через пробел.
+# Каждая заработная плата – это натуральное число, не превышающее 105.
+# Выходные данные
+# В выходной файл OUTPUT.TXT необходимо вывести одно целое число — разницу между максимальной и минимальной зарплатой.
+# Примеры:
+#        INPUT.TXT                     OUTPUT.TXT
+# 1)    100 500 1000                       900
+# 2)    36 11 20                           25
+# ------ solution ------
+
+# first solution, A way to decide how to demand this condition.
+def main():
+    with open('INPUT.txt', 'r') as f:
+        s = f.read()
+        a,b,c = map(int, s.split())
+        print(a,b,c)
+        foo(a,b,c)
+
+
+def foo(a,b,c):
+    if a>b:
+        if a>c:
+            if c>b:
+                write_t = str(a-b)
+            else:
+                write_t = str(a-c)
+
+    if b>c:
+        if b>a:
+            if a>c:
+                write_t = str(b-c)
+            else:
+                write_t = str(b-a)
+
+    if c>a:
+        if c>b:
+            if a>b:
+                write_t = str(c-b)
+            else:
+                write_t = str(c-a)
+
+    with open('OUTPUT.txt', 'w') as f:
+        f.write(write_t)
+
+
+if __name__ == '__main__':
+     main()
+
+exit()
+
+
+# second solution method using (max, min)
+def main():
+    with open('INPUT.txt', 'r') as f:
+        s = f.read()
+  
+        a,b,c = map(int, s.split())
+
+    with open('OUTPUT.txt', 'w') as f:
+        f.write(str(max(a, b, c) - min(a, b, c)))
+
+
+if __name__ == '__main__':
+     main()
+
+exit()
