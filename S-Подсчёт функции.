@@ -23,7 +23,7 @@
 
 
 def main():
-    n = int(input('input digit'))
+    n = int(input('Enter the number'))
     foo(n)
 
 
