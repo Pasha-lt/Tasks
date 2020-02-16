@@ -1,0 +1,33 @@
+# моя почта 9139136@gmail.com
+# Утрении пробежку.
+# В первый день спортсмен пробежал x километров, а затем он каждый день увеличивал пробег на 10% от предыдущего значения.
+# По данному числу y определите номер дня, на который пробег спортсмена составит не менее y километров.
+# Входные данные
+# Программа получает на вход действительные числа x и y
+# Выходные данные
+# Программа должна вывести одно натуральное число.
+# Примеры
+# входные данные
+# 10
+# 20
+# выходные данные
+# 9
+# ------ solution ------
+
+
+def main():
+    x = int(input('Enter how much the athlete ran in the first day'))
+    y = int(input('Enter how much the athlete needs to run in total'))
+    foo(x, y)
+
+
+def foo(x, y):
+    day_count = 1
+    while x <= y:
+        x = x / 10 + x  # Each cycle we add 10%
+        day_count += 1  # Each cycle we add one day
+    print(f'need {day_count} days')
+
+
+if __name__ == '__main__':
+     main()
