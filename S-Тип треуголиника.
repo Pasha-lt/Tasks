@@ -1,0 +1,34 @@
+# моя почта 9139136@gmail.com
+# Тип треугольника Определите тип треугольника(остроугольный, тупоугольный, прямоугольный) с данными сторонами.
+# Входные данные Даны три натуральных числа – стороны треугольника. Выходные данные Необходимо вывести одно из слов:
+# right для прямоугольного треугольника, acute для остроугольного треугольника, obtuse для тупоугольного треугольника
+# или impossible, если входные числа не образуют треугольника.
+# Примеры входные данные
+# 3
+# 4
+# 5
+# выходные данные
+# right
+# ------ solution ------
+
+
+def main():
+    a, b, c = map(int, input('Введите 3 стороны треугольника').split())
+    maxs = [a, b, c] # Make list.
+    foo(maxs)
+
+
+def foo(maxs):
+    maxs.sort()  # Now maxs[2] is the longest side.
+    if maxs[2] ** 2 == maxs[1] ** 2 + maxs[0] ** 2:  # For right.
+        print('right')
+    elif maxs[2] ** 2 < maxs[1] ** 2 + maxs[0] ** 2:  # For acute.
+        print('acute')
+    elif maxs[2] ** 2 > maxs[1] ** 2 + maxs[0] ** 2:  # For obtuse.
+        print('obtuse')
+    else:https://github.com/Pasha-lt
+        print('impossible')
+
+
+if __name__ == '__main__':
+     main()
