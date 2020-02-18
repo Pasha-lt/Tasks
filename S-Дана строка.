@@ -1,0 +1,31 @@
+# моя почта 9139136@gmail.com
+# Дана строка. Удалите из нее все символы, чьи индексы делятся на 3.
+# Символы строки нумеруются, начиная с нуля.
+# Входные данные
+# Вводится строка.
+# Выходные данные
+# Выведите ответ на задачу.
+# Примеры
+# входные данные
+# Python
+# выходные данные
+# yton
+# ------ solution ------
+
+
+def main():
+    a = input('enter your string')
+    foo(a)
+
+
+def foo(a):
+    al = len(a)
+    z = ''  # new string
+    for i in range(al):
+        if i % 3 != 0: # delete every third element
+            z = z + a[i]
+    print(z)
+
+
+if __name__ == '__main__':
+     main()
