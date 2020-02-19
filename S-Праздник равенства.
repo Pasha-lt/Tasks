@@ -47,7 +47,7 @@ def main():
     
     
 def foo(n):
-    sred = list(map(int, input('condition').split()))  # Make listwith all sitizens.
+    sred = list(map(int, input('condition').split()))  # Make list with all sitizens.
     maxmoney = max(sred)  # Find max condition
     z = 0
     f = 0
