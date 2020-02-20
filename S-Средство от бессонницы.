@@ -39,7 +39,7 @@ def main():
     foo(d, k, l, m, n)
 
 
-def foo(d,k,l,m,n):
+def foo(d, k, l, m, n):
     z = 0  # affected dragons
     for i in range(n):
         if i % k == 0:
