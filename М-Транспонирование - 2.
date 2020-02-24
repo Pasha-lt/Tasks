@@ -1,0 +1,64 @@
+# моя почта 9139136@gmail.com
+# Транспонирование - 2
+# Задана целочисленная квадратная матрица размером N x N. Требуется транспонировать ее относительно побочной диагонали.
+# Входные данные
+# Первая строка входного файла INPUT.TXT содержит натуральное число N – количество строк и столбцов матрицы.
+# В каждой из последующих N строк записаны N целых чисел – элементы матрицы.
+# Все числа во входных данных не превышают 100 по абсолютной величине.
+# Выходные данные
+# В выходной файл OUTPUT.TXT выведите матрицу, полученную транспонированием исходной матрицы относительно побочной диагонали.
+# Пример
+# №
+# INPUT.TXT               OUTPUT.TXT
+# 5
+# 3 4 9 6 2               0 8 7 1 2
+# 8 2 0 5 1               7 3 8 5 6
+# 4 7 4 8 7               3 3 4 0 9
+# 7 1 3 3 8               6 1 7 2 4
+# 5 6 3 7 0               5 7 4 8 3             
+# ------ solution ------
+
+
+def main():
+     with open('INPUT.txt', 'r') as k:
+          s = k.read()
+          z=-1
+          lista = list(map(int, s.split()))
+          n = lista.pop(0)  # use method pop() first numeral we save in n and rest save in lista
+          list4 = [[0]*n for i in range(n)]
+          for i in range(n):
+               for j in range(n):
+                    z+=1
+                    list4[i][j] = lista[z]
+     foo(list4,n)
+
+
+def foo(list4, n):
+     listb = []  # create listb
+     for i in range(n):  # create listb part2
+          listb.append([0] * n)  # fill listb  with zeros
+
+     for i in range(n):  # rewrite listb
+          for j in range(n):
+               if i + j <= 3:  # if the sum of the index is less than or equal to 3.
+                    x = abs(i + j - (n - 1))  # plus the index (abs(i+j - (n -1)))
+                    listb[i + x][j + x] = list4[i][j]
+               elif i + j >= 5:
+                    y = i + j - (n - 1)
+                    listb[i - y][j - y] = list4[i][j]
+               else:
+                    listb[i][j] = list4[i][j]
+     write_result(listb, n)
+
+
+def write_result(listb, n):
+     s=''
+     for i in range(n):  # output listb
+          for j in range(n):
+               s += str(listb[i][j]) + ' '
+     with open('OUTPUT.txt', 'w') as k: # write result
+          k.write(s)
+
+
+if __name__ == '__main__':
+     main()
