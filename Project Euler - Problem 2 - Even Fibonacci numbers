@@ -11,13 +11,8 @@ def foo(list_fib):
 
 def main():
     list_fib = [1, 2]
-    y = 0
-    while True:
-        y += 1
-        if list_fib[-1] > 4000000:
-            break
-        else:
-            list_fib.append(list_fib[y]+list_fib[y-1])
+    while list_fib[-1]<4000000:
+        list_fib.append(list_fib[-2]+list_fib[-1])
     foo(list_fib)
 
 
