@@ -1,0 +1,31 @@
+# The prime factors of 13195 are 5, 7, 13 and 29.
+# What is the largest prime factor of the number 600851475143 ?
+
+
+def prime_factors(n):
+    '''ищем делители числа'''
+    list_prime_factors = []
+    while True:
+        if n == 1:
+            break
+        for i in range(2, 10000): # ищем первый целый делитель и добавляем его в список
+             if n % i == 0:
+                list_prime_factors.append(i) # мещаем наши делители в список
+                n = n / i  # переписываем остаток и проделываем эту операцию пока она не будет равна 1
+                break
+    return list_prime_factors
+
+
+def largest_pf(list_prime_factors):
+    '''Проверяем какой самый большой делитель является простым числом'''
+    k = 0
+    for i in list_prime_factors:
+        if len(prime_factors(i)) == 1: # у простого числа длина будет равна 1
+            if i > k:
+                k = i
+    return k
+
+
+n = int(input('Введите число >>'))
+t = prime_factors(n)
+print(largest_pf(t))
