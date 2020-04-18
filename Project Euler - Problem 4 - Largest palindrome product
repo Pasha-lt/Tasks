@@ -1,0 +1,22 @@
+# A palindromic number reads the same both ways.
+# The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+#first solution
+def polindrom():
+    for i in range(999,900, -1): # Берем верхние диапазоны так как все просчитывать нет смысла.
+        for j in range(999,900, -1): #Начинае умножать 999 на 999 и вниз.
+            if str(j*i)[:3] == str(j*i)[6:2:-1]: # сравниваем первую часть с развернутой второй частью строки.
+                polindrom = j*i
+                return f'{i} умноженное на {j} дает нужный нам полиндром он равен {polindrom}'
+
+
+print(polindrom())
+
+
+# Решение через List comprehension.
+def polindrom2():
+    return [(i*j) for i in range(999,900, -1) for j in range(999,900, -1) if str(j*i)[:3] == str(j*i)[6:2:-1]][0]
+
+
+print(polindrom2())
