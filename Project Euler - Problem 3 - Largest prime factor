@@ -26,6 +26,11 @@ def largest_pf(list_prime_factors):
     return k
 
 
-n = int(input('Введите число >>'))
-t = prime_factors(n)
-print(largest_pf(t))
+def main():
+    n = int(input('Введите число >>'))
+    t = prime_factors(n)
+    print(largest_pf(t))
+
+
+if __name__ == '__main__':
+    main()
