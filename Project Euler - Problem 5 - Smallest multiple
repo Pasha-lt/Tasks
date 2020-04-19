@@ -1,0 +1,38 @@
+# Project Euler - Problem 5 - Smallest multiple
+# 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+# What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+
+def nok(a, b):
+    """ Ищем НОК чтобы потом найти НОД"""
+    # Алгоритм Евклида справится с этой задачей, но он медленный лучше использовать второй вариант.
+    # while a != b:
+    #     if a > b:
+    #         a = a - b
+    #     else:
+    #         b = b - a
+    # return b
+
+    #Второй вариант алгоритма для вычисления НОД
+    while b > 0:
+        a, b = b, a % b
+    return a
+
+
+def main():
+    """ Ищем НОД """
+    m = int(input('Введите число'))
+    a = list(range(1, m))
+    while True:
+        """Определяем базовый случай, он будет когда останется один элемент"""
+        if len(a) == 1:
+            print(int(a[0]))
+            break
+        else:
+            k = a[0] * a[1] / nok(a[0], a[1])
+            a = a[1:]  # Так как нам вместо 2-х чисел нужно написать одно сокращаем список и переписываем a[0]
+            a[0] = k
+
+
+if __name__ == '__main__':
+    main()
