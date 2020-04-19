@@ -11,7 +11,15 @@ def polindrom():
                 return f'{i} умноженное на {j} дает нужный нам полиндром он равен {polindrom}'
 
 
-print(polindrom())
+def main():
+    print(polindrom())
+
+
+if __name__ == '__main__':
+    main()
+
+
+exit()
 
 
 # Решение через List comprehension.
