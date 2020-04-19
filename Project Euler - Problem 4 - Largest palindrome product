@@ -4,8 +4,8 @@
 
 #first solution
 def polindrom():
-    for i in range(999,900, -1): # Берем верхние диапазоны так как все просчитывать нет смысла.
-        for j in range(999,900, -1): #Начинае умножать 999 на 999 и вниз.
+    for i in range(999, 900, -1): # Берем верхние диапазоны так как все просчитывать нет смысла.
+        for j in range(999, 900, -1): #Начинае умножать 999 на 999 и вниз.
             if str(j*i)[:3] == str(j*i)[6:2:-1]: # сравниваем первую часть с развернутой второй частью строки.
                 polindrom = j*i
                 return f'{i} умноженное на {j} дает нужный нам полиндром он равен {polindrom}'
@@ -24,7 +24,12 @@ exit()
 
 # Решение через List comprehension.
 def polindrom2():
-    return [(i*j) for i in range(999,900, -1) for j in range(999,900, -1) if str(j*i)[:3] == str(j*i)[6:2:-1]][0]
+    return [(i*j) for i in range(999, 900, -1) for j in range(999, 900, -1) if str(j*i)[:3] == str(j*i)[6:2:-1]][0]
 
 
-print(polindrom2())
+def main():
+    print(polindrom2())
+
+
+if __name__ == '__main__':
+    main()
