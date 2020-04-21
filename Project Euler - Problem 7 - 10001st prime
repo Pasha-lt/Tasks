@@ -1,0 +1,22 @@
+# Project Euler - Problem 7 - 10001st prime
+# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+# What is the 10 001st prime number?
+
+
+def prime():
+    list_prime = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+    a = 24
+    while a < 120000:
+        # Чтобы сберечь память будем брать одну третью ряда, отталкиваясь что когда i**2 > a считать безсмысленно.
+        for i in list_prime[:len(list_prime) // 3]:
+            if a % i == 0:  # если число поделится на одно из чисел из списка то оно не простое.
+                a += 1
+                break  # Економим память и не даем наполнятся неправильными значениями.
+        else:
+            list_prime.append(a)
+            a += 1
+    print(f'10001-м простым числом будет >> {list_prime[10000]}')  # Нужен 10001 нумерсция с 0.
+
+
+if __name__ == '__main__':
+    prime()
