@@ -10,7 +10,7 @@ def prime_factors(n):
             break
         for i in range(2, 10000): # ищем первый целый делитель и добавляем его в список
              if n % i == 0:
-                list_prime_factors.append(i) # мещаем наши делители в список
+                list_prime_factors.append(i) # помещаем наши делители в список
                 n = n / i  # переписываем остаток и проделываем эту операцию пока она не будет равна 1
                 break
     return list_prime_factors
@@ -27,7 +27,7 @@ def largest_pf(list_prime_factors):
 
 
 def main():
-    n = int(input('Введите число >>'))
+    n = int(input('Введите число >>')) #600851475143
     t = prime_factors(n)
     print(largest_pf(t))
 
