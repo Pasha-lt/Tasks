@@ -36,7 +36,7 @@ def foo():
         t = list_digit[i] + list_digit[i + 1] + list_digit[i + 2] + list_digit[i + 3] \
             + list_digit[i + 4] + list_digit[i + 5] + list_digit[i + 6] + list_digit[i + 7] + \
             list_digit[i+8] + list_digit[i + 9] + list_digit[i + 10] + list_digit[i + 11] + list_digit[i + 12]
-        if '0' not in t: # Если одно из чисел будет равно нулю то произведение также будет равно нулю.
+        if '0' not in t: # Если одно из чисел будет равно нулю то произведение также будет равно нулю, исключаем это.
             if bar(int(t)) > k:
                 k = bar(int(t))
     print(k)
