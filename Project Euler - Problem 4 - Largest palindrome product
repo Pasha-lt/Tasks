@@ -18,6 +18,7 @@ if __name__ == '__main__':
 exit()
 
 
+# Решение через List comprehension.
 def polindrom2():
     return [(i*j) for i in range(999, 900, -1) for j in range(999, 900, -1) if str(j*i) == str(j*i)[::-1]][0]
 
