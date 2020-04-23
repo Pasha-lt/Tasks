@@ -20,7 +20,7 @@ def sqaures_sum(a):
 
 
 def main():
-    x = int(input('>>'))
+    x = int(input('>>')) #100
     a = list(range(1, x+1))
     print(sqaures_sum(a) - sum_squares(a))
 
