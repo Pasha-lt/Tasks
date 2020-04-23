@@ -11,25 +11,16 @@ def polindrom():
                 return f'{i} умноженное на {j} дает нужный нам полиндром он равен {polindrom}'
 
 
-def main():
-    print(polindrom())
-
-
 if __name__ == '__main__':
-    main()
+    print(polindrom())
 
 
 exit()
 
 
-# Решение через List comprehension.
 def polindrom2():
-    return [(i*j) for i in range(999, 900, -1) for j in range(999, 900, -1) if str(j*i)[:3] == str(j*i)[6:2:-1]][0]
-
-
-def main():
-    print(polindrom2())
+    return [(i*j) for i in range(999, 900, -1) for j in range(999, 900, -1) if str(j*i) == str(j*i)[::-1]][0]
 
 
 if __name__ == '__main__':
-    main()
+    print(polindrom2())
