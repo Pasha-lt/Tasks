@@ -1,0 +1,34 @@
+# Project Euler - Problem 10 - Summation of primes
+# The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million.
+
+
+def sieve_of_eratosthenes():
+    '''Решение через Решето Эратосфена.'''
+    n = 2000000
+    num = list(range(2, n+1))
+    for p in num:
+        if p != 0:
+            for k in range(2*p, n+1, p): # Делаем перебор по составным числам чтобы затем приравнять их к нулю.
+                num[k-2] = 0 # Список начинается с 2 элемента, нам нужно отнять 2 чтобы правильно попадать в индекс.
+    print(sum(num))
+
+
+def prime():
+    '''Дополняем решения из задачи #7'''
+    list_prime = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+    a = 24
+    while a < 2000000:
+        # Чтобы сберечь память будем брать одну третью ряда, отталкиваясь что когда i**2 > a считать безсмысленно.
+        for i in list_prime[:len(list_prime) // 3]:
+            if a % i == 0:  # если число поделится на одно из чисел из списка то оно не простое.
+                a += 1
+                break  # Економим память и не даем наполнятся неправильными значениями.
+        else:
+            list_prime.append(a)
+            a += 1
+    print(sum(list_prime))
+
+
+if __name__ == '__main__':
+    prime()
+    sieve_of_eratosthenes()
