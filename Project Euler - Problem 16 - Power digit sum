@@ -1,0 +1,19 @@
+# Project Euler - Problem 16 - Power digit sum
+# 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+# What is the sum of the digits of the number 2^1000?
+
+# first solution
+def foo():
+    k = 0
+    for i in str(str(2**1000)):
+        k += int(i)
+
+    print(k) # 1366
+
+
+# one line solution
+print(sum([int(i) for i in str(2**1000)]))
+
+
+if __name__ == '__main__':
+    foo()
