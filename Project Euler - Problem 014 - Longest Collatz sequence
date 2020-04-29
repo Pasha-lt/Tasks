@@ -1,0 +1,45 @@
+# Project Euler - Problem 014 - Longest Collatz sequence
+# The following iterative sequence is defined for the set of positive integers:
+# n → n/2 (n is even)
+# n → 3n + 1 (n is odd)
+# Using the rule above and starting with 13, we generate the following sequence:
+# 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
+# It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms.
+# Although it has not been proved yet (Collatz Problem),
+# it is thought that all starting numbers finish at 1.
+# Which starting number, under one million, produces the longest chain?
+# NOTE: Once the chain starts the terms are allowed to go above one million.
+
+
+def foo(n):
+    '''Функция которая высчитывает количество элементов в числе и их возвращает.'''
+    k = 1 # Число элементов, стартуем с 1 так как не берем в учет последний элемент - '1'
+    
+    while True:
+        if n == 1: # Определяем базовый случай для нашего цикла.
+            return k
+        elif n % 2 == 1:
+            n = 3 * n + 1
+            k += 1
+        else:
+            n = n / 2
+            k += 1
+
+
+def bar():
+    '''Функция которая перебирает числа'''
+    z = 0 # Число c самой длиной последовательностью.
+    n = 700000 # Число для перебора.
+    k = 0 # Количество элементов входящее в число 'n'
+
+    while n < 1000001:
+        n += 1
+        t = foo(n) # Присваеваем результат выполнения функции чтобы дальше сравнить с наибольшим значением.
+        if k < t:
+            k = t
+            z = n
+    return (z)
+
+
+if __name__ == '__main__':
+    print(bar())
