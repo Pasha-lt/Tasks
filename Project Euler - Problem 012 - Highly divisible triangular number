@@ -15,19 +15,6 @@
 # What is the value of the first triangle number to have over five hundred divisors?
 
 
-from datetime import datetime
-
-
-def timeit(func):
-    '''Декоратор таймер. Используем для отслеживания времени выполнения'''
-    def wrapper(*args, **kwargs):
-       start = datetime.now()
-       result = func(*args, **kwargs)
-       print(datetime.now() - start)
-       return result
-    return wrapper
-
-
 def foo(n):
     '''Функция определяющая количетво делителей. Принимает число возвращает количество делителей'''
     z = 0  # Количество делителей которое мы будем наполнять.
@@ -37,7 +24,6 @@ def foo(n):
     return z
 
 
-@timeit
 def bar():
     '''Генератор треугольных чисел'''
     n = 1  # Число которое прибавляем к пердведущему треугольному, чтобы оно тоже стало треугольным.
