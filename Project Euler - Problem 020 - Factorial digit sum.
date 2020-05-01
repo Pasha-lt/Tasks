@@ -1,0 +1,28 @@
+# Project Euler - Problem 020 - Factorial digit sum.
+# n! means n × (n − 1) × ... × 3 × 2 × 1
+# For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
+# and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+# Find the sum of the digits in the number 100!
+
+
+def fact(n):
+    """Функция для поиска факториала. Принимает на вход число с которого нужно сделать факториал, возвращает
+    факториал """
+    k = 1  # Факториал.
+    while True:
+        if n == 1:  # Базовый случай.
+            return k
+        k *= n
+        n -= 1
+
+
+def count(n):
+    """Функция котороя суммирует цифры факториала."""
+    t = 0  # Сумма цифр факториала.
+    for i in str(fact(n)):  # Преобразуем число в строку чтобы обойти каждую цифру.
+        t += int(i)
+    return t
+
+
+if __name__ == '__main__':
+    print(count(100))
