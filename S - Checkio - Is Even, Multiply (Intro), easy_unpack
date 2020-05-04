@@ -1,0 +1,66 @@
+# Is Even
+# Check is the given number is even or not. Your function shoudl return True if the number is even,
+# andFalse if the number is odd.
+
+
+def is_even(num: int) -> bool:
+    return num % 2 == 0
+
+
+if __name__ == '__main__':
+    print("Example:")
+    print(is_even(2))
+
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert is_even(2) == True
+    assert is_even(5) == False
+    assert is_even(0) == True
+    print("Coding complete? Click 'Check' to earn cool rewards!")
+    
+----------------------------------------
+# Multiply (Intro)
+# This is an intro mission, the purpose of which is to explain how to solve missions on CheckiO and
+# how to get the most out of solving them. When the mission is solved,
+# one more station become available for you, containing more complex missions.
+
+# So this mission is the easiest one. Write a function that will receive 2 numbers as input and
+# it should return the multiplication of these 2 numbers.
+
+
+def mult_two(a, b):
+    return a * b
+
+
+if __name__ == '__main__':
+    print("Example:")
+    print(mult_two(3, 2))
+
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert mult_two(3, 2) == 6
+    assert mult_two(1, 0) == 0
+    print("Coding complete? Click 'Check' to earn cool rewards!")
+
+----------------------------------------
+
+
+# easy_unpack
+# Your mission here is to create a function that gets a tuple and returns a tuple with 3 elements - the first,
+# third and second element from the last for the given array.
+# Input: A tuple, at least 3 elements long.
+# Output: A tuple.
+
+
+def easy_unpack(elements: tuple) -> tuple:
+    return elements[0], elements[2], elements[-2]
+
+
+if __name__ == '__main__':
+    print('Examples:')
+    print(easy_unpack((1, 2, 3, 4, 5, 6, 7, 9)))
+
+    # These "asserts" using only for self-checking and not necessary for auto-testing
+    assert easy_unpack((1, 2, 3, 4, 5, 6, 7, 9)) == (1, 3, 7)
+    assert easy_unpack((1, 1, 1, 1)) == (1, 1, 1)
+    assert easy_unpack((6, 3, 7)) == (6, 7, 3)
+    print('Done! Go Check!')
+
