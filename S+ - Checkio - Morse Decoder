@@ -1,0 +1,42 @@
+# S+ - Checkio - Morse Decoder
+# Your task is to decrypt the secret message using the Morse code.
+# The message will consist of words with 3 spaces between them and 1 space between each letter of each word.
+# If the decrypted text starts with a letter then you'll have to print this letter in uppercase.
+# Input: The secret message.
+# Output: The decrypted text.
+# Example:
+# 1) morse_decoder("... --- -- .   - . -..- -") == "Some text"
+# 2) morse_decoder("..--- ----- .---- ---..") == "2018"
+# 3) morse_decoder(".. -   .-- .- ...   .-   --. --- --- -..   -.. .- -.--") == "It was a good day"
+# How it is used: For cryptography and spy work.
+# Precondition:
+# 0 < len(message) < 100
+# The message will consists of numbers and English letters only.
+
+
+MORSE = {
+    '----.': '9', '---..': '8', '-....': '6', '...--': '3', '.....': '5', '..---': '2', '-----': '0', '--...': '7',
+    '....-': '4', '.----': '1', '-..-':  'x', '.-..': 'l', '..-.': 'f', '-.-.': 'c', '....': 'h', '-...': 'b',
+    '--.-': 'q', '...-': 'v', '.--.': 'p', '.---': 'j', '-.--': 'y', '--..': 'z', '--.': 'g', '---': 'o', '-..': 'd',
+    '-.-': 'k', '...': 's', '.-.': 'r', '.--': 'w', '..-': 'u', '.-': 'a', '--': 'm', '-.': 'n', '..': 'i',
+    '-': 't', '.': 'e', '   ': '+', ' ': '', '+': ' '
+    }
+
+
+def morse_decoder(code):
+    for i, y in MORSE.items():
+        code = code.replace(f'{i}', f'{y}')
+    return code.capitalize()
+
+
+if __name__ == '__main__':
+    print("Example:")
+    print(morse_decoder('... --- ...'))
+
+    #These "asserts" using only for self-checking and not necessary for auto-testing
+    assert morse_decoder("... --- -- .   - . -..- -") == "Some text"
+    assert morse_decoder("..--- ----- .---- ---..") == "2018"
+    assert morse_decoder(".. -   .-- .- ...   .-   --. --- --- -..   -.. .- -.--") == "It was a good day"
+    print("Coding complete? Click 'Check' to earn cool rewards!")
+
+
