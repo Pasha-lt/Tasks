@@ -19,6 +19,7 @@
 # How it is used: This task challenges your creativity to come up with a solution to fit this mission's specs!
 # Precondition: The small amount of data.Let's creativity win!
 
+
 def checkio(data):
     if len(data) == 1:
         return data[0]
