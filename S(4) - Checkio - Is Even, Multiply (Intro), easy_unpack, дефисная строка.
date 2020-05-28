@@ -1,3 +1,42 @@
+# S - дефисная строка.
+# Вводится два слова через пробел. Ваша задача преобразовать данную фразу таким образом,
+# чтобы все буквы стали заглавными и между буквами в каждом слове появились дефисы
+# Input 1:
+# Бросай курить
+# Output 1:
+# Б-Р-О-С-А-Й К-У-Р-И-Т-Ь
+# Input 2:
+# cИдИ дОмА
+# Output 2:
+# C-И-Д-И Д-О-М-А
+
+
+def main():
+    """
+    string - Строка которую ввел пользователь.
+    :return: Передает строку введеную пользователем в функции обработчик.
+    """
+    string = input('Введите вашу строку').upper()
+    return foo(string)
+
+
+def foo(string):
+    """
+    Функция между буквами проставляет дефисы.
+    :param string: Строка которую ввел пользователь.
+    :return: Выводит результат.
+    """
+    string = string.split()  # Преобразуем строку в список из двух элементов чтобы делать манипуляции.
+    string = '-'.join(string[0]) + ' ' + '-'.join(string[1])  # Обрабатываем элементы и добавляем пробел.
+    return string
+
+
+if __name__ == '__main__':
+    print(main())
+    
+    
+exit()
+
 # Is Even
 # Check is the given number is even or not. Your function shoudl return True if the number is even,
 # andFalse if the number is odd.
