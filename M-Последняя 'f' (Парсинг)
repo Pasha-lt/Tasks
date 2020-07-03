@@ -17,6 +17,7 @@
 # 3
 # ------ solution ------
 
+
 def countf(x):
     a = x.find('f') # looking for the first element on the left
     b = x.rfind('f') # looking for the first element on the right
