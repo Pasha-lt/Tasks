@@ -7,3 +7,14 @@ print(list(b))
 c = {123:'123', (12,23,4):12, 'kie':'ffds'}
 d = {x:y for y,x in c.items()}
 print(d)
+
+# Напишите программу которая будет считать факториал, используйте функциональное программирование. 
+from functools import reduce
+
+number = int(input("Введите число с которого мы будем брать факториал: "))
+numbers_list = range(1, number+1)
+factorial = reduce(lambda x,y:x*y, numbers_list)
+print(factorial)
+
+
+
