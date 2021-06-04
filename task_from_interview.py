@@ -42,3 +42,30 @@ list_b = [7, 6, 9]
 
 print(foo(list_a, list_b))
 
+# Другая компания
+# task_1
+# Using this list of hetels:
+# hotels = [{'name': 'Hilton', "locations": 2345}, {'name': "Accor", 'locations': 789}, {'name': 'W', "locations":678}]
+# Please write code to create a new list of hotel names by each of these methods:
+# - using for loops 
+# - using list comprehensions
+# - using the map() functions 
+
+hotels = [{'name': 'Hilton', "locations": 2345}, {'name': "Accor", 'locations': 789}, {'name': 'W', "locations":678}]
+
+# first solution, use loops
+list_loop = []
+for i in hotels:
+    list_loop.append(i['name'])
+
+# second solution, use list comprehensions
+list_comprehension = [i['name'] for i in hotels]
+
+# third solution, use the map
+list_map = list(map(lambda hotels: hotels['name'], hotels))
+
+
+print(list_map)
+print(list_comprehension)
+print(list_loop)
+
