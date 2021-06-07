@@ -36,7 +36,6 @@ def foo(list_a, list_b):
 
     return new_list
 
-
 list_a = [1, 2]
 list_b = [7, 6, 9]
 
@@ -68,4 +67,22 @@ list_map = list(map(lambda hotels: hotels['name'], hotels))
 print(list_map)
 print(list_comprehension)
 print(list_loop)
+
+# task_2
+# Write a function named word_count that takes in a string. Return a dictionary with each word in the string as the key
+# end the number of times it appers as the value.
+
+
+
+def word_count(string_a):
+    string_a =string_a.replace(',', '').replace('.','')
+    dict_count = {}
+    for word in string_a.split():
+        if word in dict_count:
+            dict_count[word] +=1
+        else:
+            dict_count[word] = 1
+    return dict_count
+
+print(word_count('раз раз. два три'))
 
