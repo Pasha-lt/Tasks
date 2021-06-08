@@ -86,3 +86,14 @@ def word_count(string_a):
 
 print(word_count('раз раз. два три'))
 
+# task_4
+# Given the list bellow, write code to remove duplicates and preserve initial order of elements occurrence.
+# amenities = ['free wifi', 'breakfast', 'gym', 'breakfast', 'pool', 'restaurant']
+amenities = ['free wifi', 'breakfast', 'gym', 'breakfast', 'pool', 'restaurant']
+
+new_amenities = []
+for word in amenities:
+    if word not in new_amenities:
+        new_amenities.append(word)
+
+print(new_amenities)
