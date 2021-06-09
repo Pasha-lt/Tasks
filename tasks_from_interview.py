@@ -97,3 +97,22 @@ for word in amenities:
         new_amenities.append(word)
 
 print(new_amenities)
+
+# task_5
+# Write a decorator that will print the execution of the method it decorates.
+
+from datetime import datetime
+
+def timeit(func):
+    def wrapper(*args,  **kwargs):
+        start = datetime.now()
+        result = func(*args, **kwargs)
+        all_time = datetime.now() - start
+        print(all_time)
+        return result
+    return wrapper()
+
+@timeit
+def foo():
+    pass
+
