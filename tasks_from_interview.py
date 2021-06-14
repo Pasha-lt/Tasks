@@ -19,6 +19,7 @@ print(factorial)
 
 
 # другая компания
+# tsak 1
 # Нужно написать функцию которя принимает два списка и выдает список с поочередными элементами из списка 1 и 2
 # [1, 2, 3, 4], [7,6,9] =>> [1, 7, 2, 6, 3, 9, 4]
 def foo(list_a, list_b):
@@ -40,6 +41,68 @@ list_a = [1, 2]
 list_b = [7, 6, 9]
 
 print(foo(list_a, list_b))
+
+# task2
+# Нужно исправить код и дописать вызовы в assert'ах чтобы отработали assert'ы
+class Folder(object):
+    def __init__(self, name):
+        self.name = name
+
+    @property
+    def path(self):
+        return '/%s' % self.name
+
+
+folder1 = Folder('picture')
+assert(folder1.name == 'picture')
+assert(folder1.path == '/picture')
+
+assert(folder2.name == 'nature')
+assert(folder2.path == '/pictures/nature')
+
+assert(folder1.name == 'pic')
+assert(folder2.path == '/pic/nature')
+
+# Решение
+class Folder(object):
+    def __init__(self, name, parent_folder=None):
+        self.name = name
+        self.parent_folder = parent_folder
+
+    @property
+    def path(self):
+        if self.parent_folder != None:
+            # смотреть как на обьект, а не на строку и через path вызывать путь
+            result = f'{self.parent_folder.path}/{self.name}'
+        else:
+            result = f'/{self.name}'
+        return result
+
+
+folder1 = Folder('pictures')
+assert (folder1.name == 'pictures')
+assert (folder1.path == '/pictures')
+print('assert1')
+
+folder2 = Folder('nature', folder1)
+assert (folder2.name == 'nature')
+assert (folder2.path == '/pictures/nature')
+print('assert2')
+
+# folder1.name = 'pic'
+# assert(folder1.name == 'pic')
+# assert(folder2.path == '/pic/nature')
+# print('assert3')
+
+print('-'*20)
+folder3 = Folder('nat', folder2)
+print(folder3.path)
+folder1.name = 'pic'
+print(folder3.path)
+assert(folder1.name == 'pic')
+assert(folder2.path == '/pic/nature')
+print('assert3')
+
 
 # Другая компания
 # task_1
