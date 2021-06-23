@@ -249,3 +249,16 @@ def foo(list_a):
 list_a = [2,5,3,4]
 # print(list_a)
 print(foo(list_a)) # [60, 24, 40, 30]
+
+# Другая компания
+# пример оптимизации кода когда запускаем последовательность
+def foo(a):
+    return a ** 2
+
+
+def bar(a):
+    return a - 1
+
+
+print([bar(foo(a)) for a in range(4)])
+
