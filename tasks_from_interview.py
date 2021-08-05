@@ -262,3 +262,17 @@ def bar(a):
 
 print([bar(foo(a)) for a in range(4)])
 
+
+# Используя команду ifconfig найти ipv4, ipv6, mtu
+import os
+import re
+
+ipconfig_value = os.popen("ifconfig").read()
+
+mtu = (re.findall(r'mtu \d\d\d\d', ipconfig_value, flags=re.MULTILINE))[0]
+print(mtu)
+ipv4 = (re.findall(r'inet \d*.\d*.\d*.\d*', ipconfig_value, flags=re.MULTILINE))[-1]
+print(ipv4)
+ipv6 = (re.findall(r'inet6 \w\w\w\w::\w\w\w\w:\w\w\w\w:\w\w\w\w:\w\w\w\w', ipconfig_value, flags=re.MULTILINE))[0]
+print(ipv6)
+
