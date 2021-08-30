@@ -276,3 +276,39 @@ print(ipv4)
 ipv6 = (re.findall(r'inet6 \w\w\w\w::\w\w\w\w:\w\w\w\w:\w\w\w\w:\w\w\w\w', ipconfig_value, flags=re.MULTILINE))[0]
 print(ipv6)
 
+
+# new interview 
+'''
+write function for this param.
+example_true = "ab(a(b(c)d)eeezv)"
+example_false1 = ")("
+example_false2 = "((a)"
+example_false3 = "abc())("
+'''
+def foo(user_string):
+    value = False
+    list_open_p = []
+    list_close_p = []
+    for index_s, symbol in enumerate(user_string):
+        if symbol == '(':
+            list_open_p.append(index_s)
+        elif symbol == ')':
+            list_close_p.append(index_s)
+    if len(list_open_p) == len(list_close_p):
+        for index_x in range(len(list_close_p)):
+            if (list_close_p[index_x] - list_open_p[index_x]) < 0:
+                return False
+            else:
+                value = True
+        return value
+    return False
+
+
+example_true = "ab(a(b(c)d)eeezv)"
+example_false1 = ")("
+example_false2 = "((a)"
+example_false3 = "abc())("
+print(foo(example_true))
+print(foo(example_false1))
+print(foo(example_false2))
+print(foo(example_false3))
