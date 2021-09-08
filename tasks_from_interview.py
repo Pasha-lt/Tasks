@@ -312,3 +312,18 @@ print(foo(example_true))
 print(foo(example_false1))
 print(foo(example_false2))
 print(foo(example_false3))
+
+# new_company 
+'''
+8. You have a list of numbers (Integers) and target number (Integer). Task is to find in a list closest number(s) to defined target number.
+Custom example:
+some_list = [4, 2, 10, 7]
+target = 5
+Result will be: result_list = [4, 7]
+'''
+some_list = [4, 2, 10, 7]
+target = 5
+some_list.append(target)
+some_list.sort()
+target_index = some_list.index(target)
+print(some_list[target_index-1], some_list[target_index+1])
