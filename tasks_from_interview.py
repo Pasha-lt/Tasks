@@ -314,6 +314,7 @@ print(foo(example_false2))
 print(foo(example_false3))
 
 # new_company 
+# Написать код который будет выозвращать два ближних числа к заданому одно меньше, второе больше по значению. 
 '''
 8. You have a list of numbers (Integers) and target number (Integer). Task is to find in a list closest number(s) to defined target number.
 Custom example:
@@ -339,3 +340,8 @@ for i in some_list:
     elif (i-target) > 0 and i < max_value:
         max_value = i
 print(min_value, max_value)
+
+# Отсортировать список через лист компрехеншн чтобы он вернул значения выше 2
+old_list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89] 
+new_list = [x for x in old_list if x < 3] 
+print(new_list) 
