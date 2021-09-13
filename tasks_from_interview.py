@@ -345,3 +345,10 @@ print(min_value, max_value)
 old_list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89] 
 new_list = [x for x in old_list if x < 3] 
 print(new_list) 
+
+# Вводиться строка слов. Программа должна вывести на экран слова строки по возрастанию их длины.
+s = input('Введите предложение')
+s = s.split()
+s.sort(key=len)
+s = ' '.join(s)
+print(s)
