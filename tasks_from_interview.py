@@ -352,3 +352,10 @@ s = s.split()
 s.sort(key=len)
 s = ' '.join(s)
 print(s)
+
+# Написать код который в l3 добавит все елементы из l1 и l2 которые есть в двух списках
+l1 = ['a', 'd', '23', 'fff', '67']
+l2 = ['fgd', 'ty', '23', '67', 'fhj', 'rrew']
+l3 = set(l1).intersection(set(l2))
+print(l3)
+
