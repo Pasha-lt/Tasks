@@ -359,3 +359,22 @@ l2 = ['fgd', 'ty', '23', '67', 'fhj', 'rrew']
 l3 = set(l1).intersection(set(l2))
 print(l3)
 
+#1.
+a = 'qwerty'
+b = 'ytrewq' # - how to get it?
+print(a[::-1])
+
+#2.
+a = [1, 2, 3, 4, 5]
+b = [1, 2, 3, 4, 5]
+a == b
+a is b
+print(a == b) # True
+print(a is b) # False
+
+# 3.
+a = [1, 2, 3]
+b = a
+b[0] = 100
+print(a) # [100, 2, 3]
+print(b) # [100, 2, 3]
