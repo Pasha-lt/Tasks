@@ -378,3 +378,27 @@ b = a
 b[0] = 100
 print(a) # [100, 2, 3]
 print(b) # [100, 2, 3]
+
+"""
+1. склеить два массива: [1, 2, 3, 4], [7, 8] -> [1, 7, 2, 8, 3, 4]. Длина массивов может быть разной
+Использовать рекурсию
+"""
+
+def foo(list_a, list_b, new_list):
+    if len(list_a) == 0:
+        new_list.extend(list_b)
+        return new_list
+    elif len(list_b) == 0:
+        new_list.extend(list_a)
+        return new_list
+    else:
+        new_list.append(list_a[0])
+        new_list.append(list_b[0])
+        return foo(list_a[1:], list_b[1:], new_list)
+
+
+
+list_a = [1, 2, 3, 4]
+list_b = [7, 8]
+new_list = []
+print(foo(list_a, list_b, new_list))
