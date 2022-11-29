@@ -429,4 +429,41 @@ sum_for_loop(t)
 sum_while_loop(t)
 sum_recursive(t)
 
+######new company########
+"""
+Given a string of parentheses - `()[]{}`, implement a function called `is_balanced`
+that returns `True` or `False` if the parentheses are balanced
+(think about a code fragment where all other characters were filtered).
+We can assume only the above 6 characters exist in the input string.
+"""
+import pytest
 
+def foo(text):
+    dict_a = {")": "(", "}": "{", "]": "["}
+    a_list = []
+    for number, i in enumerate(text):
+        if i in "({[":
+            a_list.append(i)
+        elif len(a_list) > 0:
+            print(f'{a_list=}')
+            if dict_a[i] == a_list[-1]:
+                a_list.pop()
+            else:
+                return False
+        else:
+            return False
+    return not bool(a_list)
+
+
+@pytest.mark.parametrize("value_t", [
+    pytest.param("{}[]"),
+    pytest.param("{()}")])
+def test_foo_positive(value_t):
+    assert foo(value_t) == True
+
+
+def test_foo_negative():
+    assert foo("([)]") == False
+    assert foo("}{") == False
+    
+######new company########
